@@ -1,5 +1,10 @@
 package by.Rabtsevich.task14;
 
+/*
+Задание 14.
+В задаче на поиск максимальной оценки, вывести не саму оценку, а ее номер.
+ */
+
 public class Marks {
 
     public static void main(String[] args) {
