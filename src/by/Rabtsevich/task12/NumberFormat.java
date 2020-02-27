@@ -15,7 +15,7 @@ public class NumberFormat {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число: ");
         long x = in.nextLong();
-        changeToAccountingFormat(x);
+        changeToAccountingFormat(x); //System.out.printf("%,d", x);
     }
 
    static void changeToAccountingFormat(long x) {
