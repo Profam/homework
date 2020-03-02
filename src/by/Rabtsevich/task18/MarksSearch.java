@@ -15,11 +15,15 @@ public class MarksSearch {
         String str = in.nextLine();
         int count = 0;
         char symbol;
-        for (int i = 0; i < str.length(); i++) {
-            for (char punctuation_mark : punctuation_marks) {
-                if (str.charAt(i) == punctuation_mark) {
-                    count++;
-                    break;
+        if (str.charAt(0) == ' ' || str.charAt(str.length() - 1) == ' ')
+            str = str.trim();
+        if (str.length() != 0) {
+            for (int i = 0; i < str.length(); i++) {
+                for (char punctuation_mark : punctuation_marks) {
+                    if (str.charAt(i) == punctuation_mark) {
+                        count++;
+                        break;
+                    }
                 }
             }
         }
