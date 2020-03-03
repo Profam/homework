@@ -19,7 +19,7 @@ public class NumberFormat {
     }
 
    static void changeToAccountingFormat(long x) {
-       if ((x >= 0 & x < 1000)) System.out.println(x);
+       if((x >= 0 & x < 1000) | (x < 0 & x > -1000)) System.out.println(x);
        else {
            String s = Long.toString(x % 10);
            x /= 10;
@@ -32,7 +32,12 @@ public class NumberFormat {
                    j = 0;
                } else j++;
            }
-           s += x;
+           if(x>0) s += x;
+           else {
+               x /= -1;
+               System.out.print("-");
+               s += x;
+           }
            for (int i = s.length() - 1; i >= 0; i--) {
                System.out.print(s.charAt(i));
            }
