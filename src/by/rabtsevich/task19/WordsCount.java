@@ -2,12 +2,11 @@ package by.rabtsevich.task19;
 
 /*
 Задание 19.
-Имеется строка с текстом. Подсчитать количество слов в тексте.
-Желательно учесть, что слова могут разделяться несколькими
-пробелами, в начале и конце текста также могут быть
-пробелы, но могут и отсутствовать.
+Имеется строка с текстом. Подсчитать количество слов в тексте. Желательно учесть, что слова могут разделяться
+несколькими пробелами, в начале и конце текста также могут быть пробелы, но могут и отсутствовать.
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordsCount {
@@ -17,27 +16,20 @@ public class WordsCount {
 
     public static void main(String[] args) {
         do {
-            System.out.print("Введите строку с текстом: ");
+            System.out.print("Ожидается ввод текста. Введите строку: ");
             str = in.nextLine();
+        } while (str.isEmpty());
+            in = new Scanner(str);
+            in.useDelimiter("[\\p{Punct}\\s]+");
+
+        ArrayList<String> strings = new ArrayList<>();
+        while (in.hasNext())
+        strings.add(in.next());
+        System.out.println("Количество слов: " + strings.size());
+        for(int i = 0; i<strings.size(); i++)
+        {
+            System.out.print("[" + i + "] =" + strings.get(i) + ";");
         }
-        while (str.isEmpty());
-        int count = 0;
-        if (str.charAt(0) == ' ' || str.charAt(str.length() - 1) == ' ')
-            str = str.trim();
-        if (str.length() != 0) {
-            for (int i = 0; i < str.length(); ) {
-                if (str.charAt(i) == ' ') {
-                    while (str.charAt(i) == ' ') {
-                        i++;
-                    }
-                    count ++;
-                }
-                i++;
-            }
-            count++;
-        } else {
-            System.out.println("Ошибка! Введите текст!");
-        }
-        System.out.println("Колличество слов в строке: " + count);
+        System.out.println();
     }
 }

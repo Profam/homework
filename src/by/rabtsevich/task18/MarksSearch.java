@@ -12,9 +12,13 @@ public class MarksSearch {
     public static void main(String[] args) {
         char[]punctuation_marks = {'?','!',',',';',':','-','"','/', '.', '(',')','[',']'};
         Scanner in = new Scanner(System.in);
-        String str = in.nextLine();
+        String str;
+        do {
+            System.out.print("Ожидается ввод текста. Введите строку: ");
+            str = in.nextLine();
+        }
+        while (str.isEmpty());
         int count = 0;
-        char symbol;
         if (str.charAt(0) == ' ' || str.charAt(str.length() - 1) == ' ')
             str = str.trim();
         if (str.length() != 0) {

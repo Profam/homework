@@ -15,7 +15,7 @@ public class WordOfLastChars {
     private static String str;
     public static void main(String[] args) {
         do {
-            System.out.print("Введите строку с текстом: ");
+            System.out.print("Ожидается ввод текста. Введите строку: ");
             str = in.nextLine();
         }
         while (str.isEmpty());
